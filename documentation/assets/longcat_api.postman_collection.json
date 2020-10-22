@@ -1,0 +1,2892 @@
+{
+	"info": {
+		"_postman_id": "86f006bd-f5cb-4f14-b536-116186a99275",
+		"name": "longcat_api",
+		"description": "Requests to the Xyla API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signin",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "45e4780a-683e-4913-b85f-7e2d4fe780d2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"{{signinEmail}}\",\n\t\"password\": \"{{password}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"{{fullName}}\",\n\t\"email\": \"{{email}}\",\n\t\"password\": \"{{password}}\",\n\t\"confirmedPassword\": \"{{password}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/session",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/session",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"site\": \"COMPANY\",\n\t\"email\": \"{{email}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/forgot-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userID\": \"\",\n\t\"token\": \"\",\n\t\"password\": \"{{password}}\",\n\t\"confirmedPassword\": \"{{password}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/reset-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "grant",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userEmail\": \"{{grantEmail}}\",\n\t\"role\": \"super\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/grant",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"grant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "revoke",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userEmail\": \"{{email}}\",\n\t\"role\": \"super\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/revoke",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "embeds",
+					"item": [
+						{
+							"name": "embed",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"datadragon\": {\n    \t\"sso\": {\n\t\t\t\"companyIdentifier\": \"demo\"\n    \t}\n    }\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/embeds/sign",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"embeds",
+										"sign"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "companies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/reports/companies/{{companyIdentifier}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reports",
+								"companies",
+								"{{companyIdentifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"ASO\",\n    \"content\": {\n        \"layout\": {\n            \"x\": {\n                \"orientation\": \"vertical\",\n                \"layoutIDs\": [\n                    \"a\"\n                ]\n            }\n        },\n        \"mode\": {},\n        \"xyla\": {},\n        \"periscope\": {\n            \"a\": {\n                \"embed\": {\n                    \"dashboardID\": -1,\n                    \"params\": {\n                        \"filters\": [\n                            {\n                                \"name\": \"schema\",\n                                \"value\": \"demo\"\n                            },\n                            {\n                                \"name\": \"ASO_Schema\",\n                                \"value\": \"Demo\"\n                            },\n                            {\n                                \"name\": \"ASO_Dashboard_Date_Range\",\n                                \"value\": \"30\"\n                            },\n                            {\n                                \"name\": \"time_granularity\",\n                                \"value\": \"weekly_cohort\"\n                            },\n                            {\n                                \"name\": \"Data_Source\",\n                                \"value\": \"Demo Apple App Store: Source\",\n                                \"group\": \"Demo\"\n                            }\n                        ],\n                        \"visible\": [\n                            \"ASO_Dashboard_Date_Range\",\n                            \"Time_Granularity\",\n                            \"Data_Source\",\n                            \"_Source\",\n                            \"_Country\"\n                        ]\n                    }\n                }\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/reports/companies/{{companyIdentifier}}/create/{{reportIdentifier}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reports",
+								"companies",
+								"{{companyIdentifier}}",
+								"create",
+								"{{reportIdentifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"Weekly Overview\",\n    \"content\": {\n        \"layout\": {\n            \"x\": {\n                \"orientation\": \"vertical\",\n                \"layoutIDs\": [\n                    \"a\"\n                ]\n            }\n        },\n        \"mode\": {},\n        \"xyla\": {},\n        \"periscope\": {\n            \"a\": {\n                \"embed\": {\n                    \"dashboardID\": -1,\n                    \"params\": {\n                        \"filters\": [\n                            {\n                                \"name\": \"schema\",\n                                \"value\": \"\"\n                            },\n                            {\n                                \"name\": \"App_Name\",\n                                \"value\": \"\",\n                                \"group\": \"\"\n                            },\n                            {\n                                \"name\": \"Season\",\n                                \"value\": \"'2019-09-01'\"\n                            }\n                        ],\n                        \"visible\": [\n                            \"Season\"\n                        ]\n                    }\n                }\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/reports/companies_{{companyIdentifier}}_reports_{{reportIdentifier}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reports",
+								"companies_{{companyIdentifier}}_reports_{{reportIdentifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/reports/companies_{{companyIdentifier}}_reports_{{reportIdentifier}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reports",
+								"companies_{{companyIdentifier}}_reports_{{reportIdentifier}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "navbars",
+			"item": [
+				{
+					"name": "companies/reports",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/navbars/companies/{{companyIdentifier}}/reports",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"navbars",
+								"companies",
+								"{{companyIdentifier}}",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companies/reports",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nodes\": [\n            {\n                \"targets\": [\n                \t{\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_dashboard\"\n                    },\n                    {\n                        \"type\": \"node\",\n                        \"displayName\": \"Performance\",\n                        \"identifier\": \"performance\"\n                    },\n                    {\n                        \"type\": \"node\",\n                        \"displayName\": \"Custom\",\n                        \"identifier\": \"custom\"\n                    }\n                ],\n                \"identifier\": \"root\"\n            },\n            {\n                \"targets\": [\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_asoperformance\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_pastkpi\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_presentkpi\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_pastroas\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_presentroas\"\n                    }\n                ],\n                \"identifier\": \"performance\"\n            },\n            {\n                \"targets\": [\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_normalvariation\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_optimalspend\"\n                    },\n                    {\n                        \"type\": \"report\",\n                        \"identifier\": \"companies_demo_reports_keywords\"\n                    }\n                ],\n                \"identifier\": \"custom\"\n            }\n        ]\n    }"
+						},
+						"url": {
+							"raw": "{{baseURL}}/navbars/companies/{{companyIdentifier}}/reports",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"navbars",
+								"companies",
+								"{{companyIdentifier}}",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companies/reports",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/navbars/companies/{{companyIdentifier}}/reports",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"navbars",
+								"companies",
+								"{{companyIdentifier}}",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "company query",
+					"item": [
+						{
+							"name": "company query",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"query\": \"select daily_cohort, weekly_cohort, to_char(cast(daily_cohort as timestamp), 'YYYY-MM-01') as monthly_cohort, CASE WHEN platform <> '' THEN platform WHEN (platform = '' AND campaign_name ilike '%os%') THEN 'ios' WHEN (platform = '' AND (campaign_name ilike '%android%' OR campaign_name like '%_ADR_%')) THEN 'android' ELSE 'other' END, CASE WHEN product_name is null THEN 'App Unknown' ELSE product_name END, CASE WHEN campaign_name is null THEN 'Campaign Unknown' ELSE campaign_name END, CASE WHEN adset_name is null THEN 'Adset Unknown' ELSE adset_name END, channel, campaign_id, CASE WHEN campaign_tag is null THEN 'Untagged' ELSE campaign_tag END, CASE WHEN campaign_subtag is null THEN 'Untagged' ELSE campaign_subtag END, adset_tag, adset_tag, event_name, CASE WHEN event_name = 'af_purchase' THEN 'iapr' WHEN event_name like 'ad_%' THEN 'iaar' ELSE null END, spend, cohort_events, cohort_revenue, event_day, event_week, mmp from \\\"COMPANY\\\".\\\"performance_cube_filtered\\\" where daily_cohort >= current_timestamp - interval '90 day'\",\n    \"description\": \"Dump 90 days of COMPANY's cube\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/companies/{{companyIdentifier}}/create/{{queryIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"companies",
+										"{{companyIdentifier}}",
+										"create",
+										"{{queryIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "company query",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/companies_{{companyIdentifier}}_queries_{{queryIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"companies_{{companyIdentifier}}_queries_{{queryIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "company queries",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/queries/companies/{{companyIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"companies",
+										"{{companyIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "global query",
+					"item": [
+						{
+							"name": "global query",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"composition\": {\n    \t\"queryType\": \"cube\",\n        \"table\": \"performance_cube_filtered\",\n        \"parameters\": {\n        \t\"interval\": { \"value\": 30, \"unit\": \"day\" },\n        \t\"rowFilters\": [\n        \t\t{\n\t        \t\t\"metadata\": {\n\t        \t\t\t\"templateType\": \"row_filter\",\n\t        \t\t\t\"identifier\": \"test\"\n\t        \t\t},\n\t        \t\t\"or\": [\n\t        \t\t\t{\n\t        \t\t\t\t\"column\": \"mmp\",\n\t        \t\t\t\t\"operator\": \"not_equal\",\n\t        \t\t\t\t\"value\": \"Google\"\n\t        \t\t\t},\n\t        \t\t\t{\n\t        \t\t\t\t\"column\": \"mmp\",\n\t        \t\t\t\t\"operator\": \"is_null\",\n\t        \t\t\t\t\"value\": null\n\t        \t\t\t}\n        \t\t\t]\n        \t\t}\n        \t]\n        },\n        \"columns\": {\n            \"daily_cohort\": {\n                \"sql\": \"daily_cohort\"\n            },\n            \"weekly_cohort\": {\n                \"sql\": \"weekly_cohort\"\n            },\n            \"monthly_cohort\": {\n                \"sql\": \"to_char(cast(daily_cohort as timestamp), 'YYYY-MM-01') as monthly_cohort\"\n            },\n            \"platform\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"not_equal\",\n                            \"column\": \"platform\",\n                            \"value\": \"\"\n                        },\n                        \"then\": {\n                            \"column\": \"platform\"\n                        }\n                    },\n                    {\n                        \"and\": [\n                            {\n                                \"when\": {\n                                    \"operator\": \"equal\",\n                                    \"column\": \"platform\",\n                                    \"value\": \"\"\n                                }\n                            },\n                            {\n                                \"when\": {\n                                    \"operator\": \"contains\",\n                                    \"column\": \"campaign_name\",\n                                    \"value\": \"ios\"\n                                }\n                            }\n                        ],\n                        \"then\": {\n                            \"value\": \"ios\"\n                        }\n                    },\n                    {\n                        \"and\": [\n                            {\n                                \"when\": {\n                                    \"operator\": \"equal\",\n                                    \"column\": \"platform\",\n                                    \"value\": \"\"\n                                }\n                            },\n                            {\n                                \"or\": [\n                                    {\n                                        \"when\": {\n                                            \"operator\": \"contains\",\n                                            \"column\": \"campaign_name\",\n                                            \"value\": \"android\"\n                                        }\n                                    },\n                                    {\n                                        \"when\": {\n                                            \"operator\": \"contains\",\n                                            \"column\": \"campaign_name\",\n                                            \"value\": \"_ADR_\",\n                                            \"options\": {\n                                                \"caseSensitive\": true\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        ],\n                        \"then\": {\n                            \"value\": \"android\"\n                        }\n                    },\n                    {\n                        \"default\": {\n                            \"value\": \"other\"\n                        }\n                    }\n                ]\n            },\n            \"product_name\": {\n                \"cases\": [\n                \t{\n\t                \t\"or\": [\n\t                \t\t{\n\t\t                        \"when\": {\n\t\t                            \"operator\": \"equal\",\n\t\t                            \"column\": \"product_name\",\n\t\t                            \"value\": \"\"\n\t\t                        }\n\t                \t\t},\n\t                \t\t{\n\t\t                        \"when\": {\n\t\t                            \"operator\": \"is_null\",\n\t\t                            \"column\": \"product_name\",\n\t\t                            \"value\": null\n\t\t                        }\n\t                \t\t}\n\t                    ],\n\t                    \"then\": {\n                        \t\"value\": \"Other\"\n                        }\n            \t\t},\n                    {\n                        \"default\": {\n                            \"column\": \"product_name\"\n                        }\n                    }\n                ]\n            },\n            \"campaign_name\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"is_null\",\n                            \"column\": \"campaign_name\",\n                            \"value\": null\n                        },\n                        \"then\": {\n                            \"value\": \"Campaign Unknown\"\n                        }\n                    },\n                    {\n                        \"default\": {\n                            \"column\": \"campaign_name\"\n                        }\n                    }\n                ]\n            },\n            \"adset_name\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"is_null\",\n                            \"column\": \"adset_name\",\n                            \"value\": null\n                        },\n                        \"then\": {\n                            \"value\": \"Adset Unknown\"\n                        }\n                    },\n                    {\n                        \"default\": {\n                            \"column\": \"adset_name\"\n                        }\n                    }\n                ]\n            },\n            \"channel\": {\n                \"sql\": \"channel\"\n            },\n            \"campaign_id\": {\n                \"sql\": \"campaign_id\"\n            },\n            \"campaign_tag\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"is_null\",\n                            \"column\": \"campaign_tag\",\n                            \"value\": null\n                        },\n                        \"then\": {\n                            \"value\": \"Untagged\"\n                        }\n                    },\n                    {\n                        \"default\": {\n                            \"column\": \"campaign_tag\"\n                        }\n                    }\n                ]\n            },\n            \"campaign_subtag\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"is_null\",\n                            \"column\": \"campaign_subtag\",\n                            \"value\": null\n                        },\n                        \"then\": {\n                            \"value\": \"Untagged\"\n                        }\n                    },\n                    {\n                        \"default\": {\n                            \"column\": \"campaign_subtag\"\n                        }\n                    }\n                ]\n            },\n            \"adset_tag\": {\n                \"sql\": \"adset_tag\"\n            },\n            \"adset_subtag\": {\n                \"sql\": \"adset_subtag\"\n            },\n            \"event_name\": {\n                \"sql\": \"event_name\"\n            },\n            \"revenue_type\": {\n                \"cases\": [\n                    {\n                        \"when\": {\n                            \"operator\": \"equal\",\n                            \"column\": \"event_name\",\n                            \"value\": \"af_purchase\"\n                        },\n                        \"then\": {\n                            \"value\": \"iapr\"\n                        }\n                    },\n                    {\n                        \"when\": {\n                            \"operator\": \"starts_with\",\n                            \"column\": \"event_name\",\n                            \"value\": \"ad_\",\n                            \"options\": {\n                                \"caseSensitive\": true\n                            }\n                        },\n                        \"then\": {\n                            \"value\": \"iaar\"\n                        }\n                    }\n                ]\n            },\n            \"spend\": {\n                \"sql\": \"spend\"\n            },\n            \"cohort_events\": {\n                \"sql\": \"cohort_events\"\n            },\n            \"cohort_revenue\": {\n                \"sql\": \"cohort_revenue\"\n            },\n            \"event_day\": {\n                \"sql\": \"event_day\"\n            },\n            \"event_week\": {\n                \"sql\": \"event_week\"\n            },\n            \"mmp\": {\n                \"sql\": \"mmp\"\n            }\n        }\n    },\n    \"description\": \"Standard Performance Cube query for all clients.\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/global/create/{{globalQueryIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"global",
+										"create",
+										"{{globalQueryIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "global query",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/global_queries_{{globalQueryIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"global_queries_{{globalQueryIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "global queries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ca6e36b-8233-467b-8042-04e14ad915d8",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/queries/global",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"global"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "company export",
+					"item": [
+						{
+							"name": "company export",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"displayName\": \"COMPANY - 90 day dump\",\n\t\"queryPath\": \"companies_{{companyIdentifier}}_queries_{{queryIdentifier}}\",\n\t\"description\": \"Dump 90 days of COMPANY's performance cube\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/companies/{{companyIdentifier}}/exports/{{exportIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"companies",
+										"{{companyIdentifier}}",
+										"exports",
+										"{{exportIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "company export",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/queries/exports/companies_{{companyIdentifier}}_exports_{{exportIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"exports",
+										"companies_{{companyIdentifier}}_exports_{{exportIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "company exports",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/queries/companies/{{companyIdentifier}}/exports",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"companies",
+										"{{companyIdentifier}}",
+										"exports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "company export",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/queries/exports/companies_{{companyIdentifier}}_exports_{{exportIdentifier}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"queries",
+										"exports",
+										"companies_{{companyIdentifier}}_exports_{{exportIdentifier}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "logo",
+					"item": [
+						{
+							"name": "logo",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "logo",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/logo",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"logo"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "logo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/logo",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"logo"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "logo",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/logo",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"logo"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "invitation",
+					"item": [
+						{
+							"name": "invite/accept",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\": \"{{inviteToken}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/invite/accept",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"invite",
+										"accept"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invite",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"inviteEmail\": \"{{email}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/invite",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"invite"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"displayName\": \"{{companyDisplayName}}\",\n\t\"identifier\": \"{{companyIdentifier}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/companies/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "associate",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userEmail\": \"{{email}}\",\n\t\"companyIdentifier\": \"{{companyIdentifier}}\"\n}\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/companies/associate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"associate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dissociate",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userEmail\": \"{{email}}\",\n\t\"companyIdentifier\": \"{{companyIdentifier}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/companies/dissociate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"dissociate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/deactivate",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}/users/deactivate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}",
+								"users",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/companies",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}",
+								"users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}",
+								"groups"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "entities",
+			"item": [
+				{
+					"name": "entities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}/entities",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}",
+								"entities"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "tags",
+			"item": [
+				{
+					"name": "parsers",
+					"item": [
+						{
+							"name": "parsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/parsers",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"parsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "parser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"key_map\": {\n        \"construct\": {\n            \"parser_identifier_key_map\": {\n                \"iokeymap\": \"iokeymap.map://tag_parser/apple_search_ads-campaign-identifier\",\n                \"output\": {\n                \t\"parser_identifier\": \"str.run.parser_identifier\"\n                }\n            },\n            \"parser_provider_key_map\": \"iokeymap.parser_provider\"\n        },\n        \"map\": \"iomap.io_channel.parse/IOSwitchParser\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/parsers/{{parserName}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"parsers",
+										"{{parserName}}"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "parser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/parsers/{{parserName}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"parsers",
+										"{{parserName}}"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "parse names",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/parsers/{{parserName}}/parse",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"parsers",
+										"{{parserName}}",
+										"parse"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "run standard",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/standard",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"standard"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "csv",
+					"item": [
+						{
+							"name": "tags/:entity/csv",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/{{tagEntity}}/csv",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"{{tagEntity}}",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tags/:entity/csv/merge",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "csv_file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/campaign/csv/merge",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"campaign",
+										"csv",
+										"merge"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "tag|subtag",
+					"item": [
+						{
+							"name": "tags/:entity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/{{tagEntity}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"{{tagEntity}}"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "tags/campaign/primary",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/campaign/primary",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"campaign",
+										"primary"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "tags/campaign/subtag",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/campaign/subtag",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"campaign",
+										"subtag"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "tags/campaign/delete",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"campaigns\": [\n\t\t{\"channel\": \"Apple\", \"campaign_id\": \"\"},\n\t\t{\"channel\": \"Facebook\", \"campaign_id\": \"\"}\n\t\t]\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/campaign/delete",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"campaign",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "performance",
+					"item": [
+						{
+							"name": "performance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/tags/performance",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"tags",
+										"performance"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "permissions",
+			"item": [
+				{
+					"name": "groups",
+					"item": [
+						{
+							"name": "groups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"displayName\": \"Longcat Admin\",\n\t\"shortDisplayName\": \"Admin\",\n\t\"path\": \"{{groupPath}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/create",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/edit",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"displayName\": \"Longcat Admin\",\n\t\"shortDisplayName\": \"Admin\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/{{groupPath}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"{{groupPath}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/{{groupPath}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"{{groupPath}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/grant",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"groupPath\": \"{{groupPath}}\",\n\t\"permissionPaths\": [\n\t\t\"{{permissionPath}}\"\n\t\t]\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/grant",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"grant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/revoke",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"groupPath\": \"{{groupPath}}\",\n\t\"permissionPaths\": [\n\t\t\"{{permissionPath}}\"\n\t\t]\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/revoke",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"revoke"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/associate",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"groupPath\": \"companies_{{companyIdentifier}}_groups_admin\",\n\t\"userEmail\": \"{{email}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/associate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"associate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groups/dissociate",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"groupPath\": \"{{groupPath}}\",\n\t\"userEmail\": \"{{email}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/permissions/groups/dissociate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"permissions",
+										"groups",
+										"dissociate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/permissions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"displayName\": \"{{companyDisplayName}} List Reports\",\n\t\"shortDisplayName\": \"List Reports\",\n\t\"path\": \"company_{{companyIdentifier}}_reports_list\",\n\t\"targetPathPattern\": \"^company_{{companyIdentifier}}_reports$\",\n\t\"actionPattern\": \"^list$\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/permissions/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"permissions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"displayName\": \"Longcat View Reports\",\n\t\"shortDisplayName\": \"View Reports\",\n\t\"targetPathPattern\": \"^companies_[^_]+_reports_mode_\",\n\t\"actionPattern\": \"^embed$\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/permissions/{{permissionPath}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"permissions",
+								"{{permissionPath}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/permissions/{{permissionPath}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"permissions",
+								"{{permissionPath}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "feeds",
+			"item": [
+				{
+					"name": "core",
+					"item": [
+						{
+							"name": "core/config",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/core/config",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"core",
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "core/config",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d00bce1c-271d-4746-9593-c08ea3d2011b",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"schedule\": [\n    ],\n    \n    \"config\": {\n        \"COMPANY\": {\n            \"company_metadata\": {\n                \"currency\": \"USD\",\n                \"display_name\": \"COMPANY\"\n            },\n            \"products\": {\n                \"PRODUCT\": {\n                    \"display_name\": \"PRODUCT\",\n                    \"platform_ids\": {\n                        \"android\": \"ID\",\n                        \"ios\": -1\n                    }\n                }\n            },\n            \"task_sets\": {}\n        }\n    }\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/core/config",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"core",
+										"config"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "core/config",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d00bce1c-271d-4746-9593-c08ea3d2011b",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"config\": {\n        \"COMPANY\": {\n            \"company_metadata\": {\n                \"currency\": \"USD\",\n                \"display_name\": \"COMPANY\"\n            },\n            \"products\": {},\n            \"task_sets\": {}\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/core/config",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"core",
+										"config"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "data-lots",
+					"item": [
+						{
+							"name": "utils/structure/csv",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "csv_file",
+											"type": "file",
+											"src": "SAMPLE.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/utils/structure/csv",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"utils",
+										"structure",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tables/create",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"displayName\": \"Test Data Lot\",\n    \"description\": \"A Test Data Lot\",\n     \"columnTypes\": {\n        \"channel\": \"character varying(256)\",\n        \"current_campaign_name\": \"character varying(8192)\",\n        \"old_campaign_name\": \"character varying(8192)\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/tables/{{tableName}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"tables",
+										"{{tableName}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tables/replace",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "csv_file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/tables/{{tableName}}/replace",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"tables",
+										"{{tableName}}",
+										"replace"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tables/merge",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "csv_file",
+											"type": "file",
+											"src": "SAMPLE.csv"
+										},
+										{
+											"key": "options",
+											"value": "{\"merge_column_names\": [\"country\", \"currency\", \"date\", \"os\"]}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/tables/{{tableName}}/merge",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"tables",
+										"{{tableName}}",
+										"merge"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tables/data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/tables/{{tableName}}/data",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"tables",
+										"{{tableName}}",
+										"data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "table",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"displayName\": \"Revenue\",\n    \"columnTypes\": {\n        \"ad revenue\": \"double precision\",\n        \"country\": \"character varying(256)\",\n        \"currency\": \"character varying(256)\",\n        \"date\": \"date\",\n        \"os\": \"character varying(256)\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds/tables/{{tableName}}",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"companies",
+										"{{companyIdentifier}}",
+										"feeds",
+										"tables",
+										"{{tableName}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/companies/{{companyIdentifier}}/feeds",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"companies",
+								"{{companyIdentifier}}",
+								"feeds"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "inquiry",
+			"item": [
+				{
+					"name": "demo/inquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"reportingNeeds\": [\"paid\", \"organic\"],\n\t\"mmps\": [\"appsflyer\", \"adjust\"],\n\t\"networks\": [\"facebook\", \"snapchat\"],\n\t\"operatingSystems\": [\"iOS\", \"Android\"],\n\t\"company\": \"TestCo\",\n\t\"firstName\": \"Xilas\",\n\t\"lastName\": \"Dude\",\n\t\"email\": \"EMAIL\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/demo/inquiry",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"demo",
+								"inquiry"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "templates",
+			"item": [
+				{
+					"name": "populate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"paths\": [\n        \"companies_{{companyIdentifier}}_reports_dashboard_protected_template_master_performance\"\n\t],\n\t\"recursive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/templates/populate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"templates",
+								"populate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/templates/update",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"templates",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pathPattern\": \"^companies_{{companyIdentifier}}_reports_dashboard\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/templates/find",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"templates",
+								"find"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "maintenance",
+			"item": [
+				{
+					"name": "convert-email-to-lower-case",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": true,\n\t\"skipDuplicateAccounts\": false\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/convert-email-to-lower-case",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"convert-email-to-lower-case"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-company-permissions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/create-company-permissions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"create-company-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-global-permissions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/create-global-permissions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"create-global-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clean-unused-permissions",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/clean-unused-permissions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"clean-unused-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-all-company-users-to-analysts",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false,\n\t\"company\": \"{{companyIdentifier}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/add-all-company-users-to-analysts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"add-all-company-users-to-analysts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-data-analyst-to-company",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false,\n\t\"company\": \"{{companyIdentifier}}\",\n\t\"email\": \"{{email}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/add-data-analyst-to-company",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"add-data-analyst-to-company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-company-storage-scaffolding",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false,\n\t\"companies\": [\"testco\", \"COMPANY\", \"COMPANY\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/update-company-storage-scaffolding",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"update-company-storage-scaffolding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "micra-jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/micra-jobs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"micra-jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "micra-jobs/:name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/micra-jobs/{{micraJobName}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"micra-jobs",
+								"{{micraJobName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "micra-health",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/micra-health",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"micra-health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activity",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/activity",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"activity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trigger-almacen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": true,\n\t\"companies\": [\n\t\t\"COMPANY\"\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/trigger-almacen",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"trigger-almacen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-default-xyla-report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false,\n\t\"companyIdentifier\": \"{{companyIdentifier}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/create-default-xyla-report",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"create-default-xyla-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-all-template-versions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dryRun\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/maintenance/update-all-template-versions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"maintenance",
+								"update-all-template-versions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0d15142f-0df4-4294-bd31-cbdbbb618bcc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "13f38d04-5d62-44e0-8710-9cdc5721fad9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6cca0137-4c17-416a-8054-1f15d147cbdd",
+			"key": "baseURL",
+			"value": "http://localhost:3200/api",
+			"type": "string"
+		},
+		{
+			"id": "c17650f4-c5e4-4125-a4ca-b2510b993b43",
+			"key": "fullName",
+			"value": "FULLNAME",
+			"type": "string"
+		},
+		{
+			"id": "cacc27db-8000-4dc0-9e08-9a8d76e48776",
+			"key": "email",
+			"value": "EMAIL",
+			"type": "string"
+		},
+		{
+			"id": "7623fc50-be25-4042-a3c6-75170f5c2736",
+			"key": "password",
+			"value": "PASSWORD",
+			"type": "string"
+		},
+		{
+			"id": "76ffeefe-7dec-4013-88fa-a55e7410de9c",
+			"key": "companyIdentifier",
+			"value": "COMPANY",
+			"type": "string"
+		},
+		{
+			"id": "6414e588-939d-4689-bf55-6443896e76e1",
+			"key": "objectID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3a818be8-5446-49e7-bdc6-25c72a27e1c1",
+			"key": "groupPath",
+			"value": "longcat_admin",
+			"type": "string"
+		},
+		{
+			"id": "a87c2b6f-ae69-44e7-aece-203d76ba627f",
+			"key": "permissionPath",
+			"value": "longcat_view_reports",
+			"type": "string"
+		},
+		{
+			"id": "16a83446-ebb6-473a-83fd-fba5e64e6a2d",
+			"key": "companyDisplayName",
+			"value": "COMPANY",
+			"type": "string"
+		},
+		{
+			"id": "8c2aed13-6686-4beb-9836-33f272207edd",
+			"key": "reportIdentifier",
+			"value": "periscopedemo",
+			"type": "string"
+		},
+		{
+			"id": "15896db3-3608-46c9-8390-df3a5a5fa34f",
+			"key": "longcatAppToken",
+			"value": "LONGCAT_APP_TOKEN",
+			"type": "string"
+		},
+		{
+			"id": "6f503e95-dc43-4e25-b9e0-cbd7a1fbd8a0",
+			"key": "queryIdentifier",
+			"value": "QUERY_IDENTIFIER",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

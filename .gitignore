@@ -1,0 +1,78 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+#
+package-lock.json
+crashlog/server.crashlog
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+/.idea
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# vim
+*.swp
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Credentials
+/credentials/*
+!/credentials/README.md
+
+# SSL Certificates
+/ssl/*
+!/ssl/README.md
+
+# Crash Log
+/server.crashlog
+
+# New Relic
+/newrelic_agent.log
+
+# Managed Files
+/files/*
+!/files/ui/
+!/files/companies/
+/files/companies/*
+!/files/companies/README.md
+!/files/README.md
+!/files/users/
+/files/users/*
+!/files/users/README.md
+
+# Generated Documentation
+/documentation/dist/
+
+# Environment files and secrets
+/environment/production.js
+/environment/staging.js
+/environment/development.js
+/environment/aws-*.json
+environment.zip
+
+# Redis dumps
+dump.rdb

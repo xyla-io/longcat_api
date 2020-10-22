@@ -1,0 +1,8 @@
+{
+  "events": {
+    "crash": "sleep 3; echo \"Restarting at $(date)\" >> crashlog/server.crashlog"
+  },
+  "watch": ["config/", "controllers/", "models/", "modules/", "node/", "scripts/", "content/", "emails/", "queries/", "workers/", "spec/"],
+  "verbose": true,
+  "ext": "js json crashlog"
+}
